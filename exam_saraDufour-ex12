@@ -1,0 +1,13 @@
+
+
+Chromosome 4:136443949 
+
+
+vraag2:
+opzoeken in ensembl: mouse Notch1 gen en locatie gebruiken in de curl
+
+curl 'http://rest.ensembl.org/sequence/region/mouse/2:26457903..26458003' -H'Content-type:text/x-fasta'
+>chromosome:GRCm38:2:26457903:26458003:1
+TTTAGCAAAATGTGGACAACCATCAGTATCATTTTTATTGCAAATTAGTTAACAAAAAAA
+GATGAAAAAAATACATCATTTTCATTACCTACAGTTTTGCA
+
