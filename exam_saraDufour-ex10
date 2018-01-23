@@ -1,0 +1,19 @@
+SELECT gene_name, seq_region_end-seq_region_start+1 as length FROM gene ORDER BY length asc LIMIT 1;
+	gene_name: TRDD1 
+	lenght:8
+
+mysql> SELECT gene.gene_name, count(*) as transcripts FROM transcript JOIN gene ON transcript.gene_id=gene.gene_id GROUP BY transcript.gene_id ORDER BY transcripts desc LIMIT 1;
+	gene_name: NDRG2
+	transcripts: 80
+
+SELECT chromosome FROM gene WHERE gene.description LIKE '%cancer%' GROUP BY chromosome ORDER BY count(*) DESC LIMIT 1 OFFSET 1;
+
+	chromosome: 9
+2e deelvraag: /
+
+SELECT count(*) from exon;
+	count(*):642590
+SELECT count(*) from exon_transcript;
+	count(*): 1178393
+per exon_id worden de transcript_id's weergegeven. 
+wanneer SELECT distinct(exon_id) FROM exon_transcript; uitgevoerd wordt zal hetzelfde aantal exon_id's voorkomen in de tabel. 
