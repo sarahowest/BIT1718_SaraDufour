@@ -1,0 +1,25 @@
+UNF: alles in 1 tabel plaatsen
+
+(personnel_number, Name, Date_of_birth, Lab_code, Lab_name, (Research_code, Research_descritption, REsearch_supervisor))
+
+1NF: splitsen van repeating groups en key toekennen
+
+personnel(personnel_number, Name, Date_of_birth, Lab_code, Lab_name) prkey: personnel_number
+project(Research_code, Research_descritption, Research_supervisor, personnel_number) prkey: research_code
+
+2NF: geen partiële afhankelijkheden (alle niet key elementen zijn afhankelijk van de volledige key)
+lab_code en lab_name zijn niet afhankelijk van personnel_number
+
+personnel(personnel_number, Name, Date_of_birth) prkey: personnel_number
+lab(Lab_code, Lab_name) prkey: Lab_code
+project(Research_code, Research_description, Research_supervisor, personnel_number) prkey: research_code
+
+3NF alle niet key elementen zijn niet transitief afhankelijk van andere niet key elementen
+
+
+personnel(personnel_number, personnel_name, Date_of_birth)
+lab(lab_code, Lab_name)
+project(Research_code, research_description, reasearch supervisor)
+team(personnel_number, lab_code, research_code)
+
+
