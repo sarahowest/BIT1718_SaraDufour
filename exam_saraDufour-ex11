@@ -1,0 +1,14 @@
+1
+----------------------------------
+2
+Give the number of medicines that have side effects in more than 12% of cases. 
+	db.getCollection('bioinf_mongo_examen').count({"percentage_of_side_effects":{$gt:12}})
+	12
+
+---------------------------------------
+3
+db.getCollection('bioinf_mongo_examen').aggregate([{$group:{_id:"$company",average:{$avg:"$percentage_of_side_effects"}}},{$match:{avergae:{$gte:10}}}])
+
+--------------------------------------
+4
+
